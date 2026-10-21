@@ -12,3 +12,14 @@ Studio uploads them into Roblox from their raw links; the game itself references
 
 `tools/` holds the Python scripts that draw every image (cairosvg + Pillow, Fredoka font).
 Run them from inside `tools/`; each writes its PNGs to the current folder.
+
+## Badges, game icon and thumbnails
+
+| Folder | What | Where it goes |
+|---|---|---|
+| `badges/` | 6 badge icons (512x512): first_crate, crate_crazy, millionaire, legendary, first_rebirth, savanna | Creator Dashboard > Badges (one image per badge), then paste each badge ID into `Config.Badges` |
+| `icon/game_icon.png` | the game icon (512x512), safari wood-frame version | Creator Dashboard > Places > Icon |
+| `thumbnails/` | three 1920x1080 thumbnails: zoo, hub, crates | Creator Dashboard > Places > Thumbnails |
+
+Drawn by `tools/make_badges.py`, `tools/make_game_icon_v2.py` and `tools/make_thumbnails_v2.py`
+(the thumbnails start from in-game Studio screenshots).
