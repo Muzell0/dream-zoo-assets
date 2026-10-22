@@ -105,11 +105,16 @@ def settings():  # a gear
             f'<path d="M86,78 Q106,60 134,58" stroke="#FFFFFF" stroke-width="9" stroke-linecap="round" opacity="0.7" fill="none"/>')
 
 
-def build():  # a hammer crossed with a little plank
-    return (f'<rect x="40" y="168" width="150" height="34" rx="8" fill="url(#gWood)" {st()} transform="rotate(-14 115 185)"/>'
-            f'<rect x="112" y="80" width="30" height="150" rx="10" fill="url(#gWood)" {st()} transform="rotate(38 127 155)"/>'
-            f'<path d="M72,56 L156,30 Q178,24 184,46 L196,86 Q200,104 182,108 L98,134 Z" fill="url(#gGrey)" {st()} transform="rotate(8 134 82)"/>'
-            f'<path d="M92,62 L160,42" stroke="#FFFFFF" stroke-width="8" stroke-linecap="round" opacity="0.7"/>')
+def build():  # a classic claw hammer, tilted: wooden handle with a grip, steel head with a striking face and a split claw
+    g = (f'<rect x="112" y="92" width="34" height="140" rx="12" fill="url(#gWood)" {st()}/>'
+         f'<rect x="112" y="186" width="34" height="46" rx="12" fill="url(#gRed)" {st()}/>'
+         f'<path d="M120,196 L138,196 M120,210 L138,210" stroke="#A8332C" stroke-width="5" stroke-linecap="round"/>'
+         # head: square striking face on the left, neck, claw curling down on the right
+         f'<path d="M44,40 L92,40 L92,48 L150,48 Q176,48 196,62 Q214,76 222,104 Q200,92 180,92 L150,98 L92,98 L92,104 L44,104 Z" fill="url(#gGrey)" {st()}/>'
+         f'<path d="M188,74 Q204,84 212,98" stroke="{DARK}" stroke-width="7" stroke-linecap="round" fill="none"/>'
+         f'<rect x="104" y="44" width="50" height="58" rx="6" fill="#8A93A2" {st(8)}/>'
+         + shine(52, 50, 32, 10, 5) + shine(112, 54, 30, 8, 4))
+    return f'<g transform="rotate(-35 128 128) translate(0 6)">{g}</g>'
 
 
 def animals():  # a paw print in a badge
